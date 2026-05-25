@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.security.filter;
+package com.aaryav.plutocracy.security.filter;
 
 import java.io.IOException;
 
@@ -14,8 +14,8 @@ import org.springframework.security.web.authentication.WebAuthenticationDetailsS
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
-import com.Aaryav.plutocracy.security.CustomUserDetailService;
-import com.Aaryav.plutocracy.security.utility.JwtUtils;
+import com.aaryav.plutocracy.security.CustomUserDetailService;
+import com.aaryav.plutocracy.security.utility.JwtUtils;
 
 import lombok.AllArgsConstructor;
 

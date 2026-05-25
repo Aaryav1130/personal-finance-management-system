@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.security.utility;
+package com.aaryav.plutocracy.security.utility;
 
 import java.util.Date;
 import java.util.HashMap;
@@ -10,8 +10,8 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import com.Aaryav.plutocracy.entity.User;
-import com.Aaryav.plutocracy.security.configuration.properties.JwtConfiguration;
+import com.aaryav.plutocracy.entity.User;
+import com.aaryav.plutocracy.security.configuration.properties.JwtConfiguration;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

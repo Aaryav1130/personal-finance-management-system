@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.controller;
+package com.aaryav.plutocracy.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Aaryav.plutocracy.dto.request.GoalCreationRequestDto;
-import com.Aaryav.plutocracy.dto.request.GoalUpdationRequestDto;
-import com.Aaryav.plutocracy.service.GoalService;
+import com.aaryav.plutocracy.dto.request.GoalCreationRequestDto;
+import com.aaryav.plutocracy.dto.request.GoalUpdationRequestDto;
+import com.aaryav.plutocracy.service.GoalService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

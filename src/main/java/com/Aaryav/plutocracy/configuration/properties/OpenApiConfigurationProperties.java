@@ -1,11 +1,11 @@
-package com.Aaryav.plutocracy.configuration.properties;
+package com.aaryav.plutocracy.configuration.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import lombok.Data;
 
 @Data
-@ConfigurationProperties(prefix = "com.Aaryav.plutocracy.swagger")
+@ConfigurationProperties(prefix = "com.aaryav.plutocracy.swagger")
 public class OpenApiConfigurationProperties {
 
 	private Properties properties = new Properties();

@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.service;
+package com.aaryav.plutocracy.service;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -8,15 +8,15 @@ import java.util.stream.Collectors;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.Aaryav.plutocracy.constant.TicketType;
-import com.Aaryav.plutocracy.dto.response.SpendingThresholdRecordDto;
-import com.Aaryav.plutocracy.entity.CompletedTicket;
-import com.Aaryav.plutocracy.entity.SpendingThresholdRecord;
-import com.Aaryav.plutocracy.repository.CompletedTicketRepository;
-import com.Aaryav.plutocracy.repository.CurrentMonthlySpendingThresholdLimitRepository;
-import com.Aaryav.plutocracy.repository.SpendingThresholdRecordRepository;
-import com.Aaryav.plutocracy.repository.UserRepository;
-import com.Aaryav.plutocracy.security.utility.JwtUtils;
+import com.aaryav.plutocracy.constant.TicketType;
+import com.aaryav.plutocracy.dto.response.SpendingThresholdRecordDto;
+import com.aaryav.plutocracy.entity.CompletedTicket;
+import com.aaryav.plutocracy.entity.SpendingThresholdRecord;
+import com.aaryav.plutocracy.repository.CompletedTicketRepository;
+import com.aaryav.plutocracy.repository.CurrentMonthlySpendingThresholdLimitRepository;
+import com.aaryav.plutocracy.repository.SpendingThresholdRecordRepository;
+import com.aaryav.plutocracy.repository.UserRepository;
+import com.aaryav.plutocracy.security.utility.JwtUtils;
 
 import lombok.AllArgsConstructor;
 

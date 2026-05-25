@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.controller;
+package com.aaryav.plutocracy.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Aaryav.plutocracy.dto.response.TagRetreivalRequestDto;
-import com.Aaryav.plutocracy.service.TagService;
+import com.aaryav.plutocracy.dto.response.TagRetreivalRequestDto;
+import com.aaryav.plutocracy.service.TagService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

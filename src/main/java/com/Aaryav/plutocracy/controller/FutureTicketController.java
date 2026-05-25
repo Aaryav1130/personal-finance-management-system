@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.controller;
+package com.aaryav.plutocracy.controller;
 
 import java.util.UUID;
 
@@ -15,8 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Aaryav.plutocracy.dto.request.FutureTicketCreationRequestDto;
-import com.Aaryav.plutocracy.service.FutureTicketService;
+import com.aaryav.plutocracy.dto.request.FutureTicketCreationRequestDto;
+import com.aaryav.plutocracy.service.FutureTicketService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

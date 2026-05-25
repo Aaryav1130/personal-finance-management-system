@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.controller;
+package com.aaryav.plutocracy.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Aaryav.plutocracy.dto.request.UserCreationRequestDto;
-import com.Aaryav.plutocracy.dto.request.UserLoginRequestDto;
-import com.Aaryav.plutocracy.dto.request.UserPasswordUpdationRequestDto;
-import com.Aaryav.plutocracy.service.UserService;
+import com.aaryav.plutocracy.dto.request.UserCreationRequestDto;
+import com.aaryav.plutocracy.dto.request.UserLoginRequestDto;
+import com.aaryav.plutocracy.dto.request.UserPasswordUpdationRequestDto;
+import com.aaryav.plutocracy.service.UserService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

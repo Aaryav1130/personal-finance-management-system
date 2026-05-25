@@ -1,22 +1,22 @@
-package com.Aaryav.plutocracy.service;
+package com.aaryav.plutocracy.service;
 
 import java.util.stream.Collectors;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.Aaryav.plutocracy.dto.request.NoteCreationRequestDto;
-import com.Aaryav.plutocracy.dto.request.NoteUpdationRequestDto;
-import com.Aaryav.plutocracy.dto.response.NoteDto;
-import com.Aaryav.plutocracy.entity.Note;
-import com.Aaryav.plutocracy.entity.NoteTagMapping;
-import com.Aaryav.plutocracy.entity.Tag;
-import com.Aaryav.plutocracy.repository.NoteRepository;
-import com.Aaryav.plutocracy.repository.NoteTagMappingRepository;
-import com.Aaryav.plutocracy.repository.TagRepository;
-import com.Aaryav.plutocracy.repository.UserRepository;
-import com.Aaryav.plutocracy.security.utility.JwtUtils;
-import com.Aaryav.plutocracy.utils.ResponseUtils;
+import com.aaryav.plutocracy.dto.request.NoteCreationRequestDto;
+import com.aaryav.plutocracy.dto.request.NoteUpdationRequestDto;
+import com.aaryav.plutocracy.dto.response.NoteDto;
+import com.aaryav.plutocracy.entity.Note;
+import com.aaryav.plutocracy.entity.NoteTagMapping;
+import com.aaryav.plutocracy.entity.Tag;
+import com.aaryav.plutocracy.repository.NoteRepository;
+import com.aaryav.plutocracy.repository.NoteTagMappingRepository;
+import com.aaryav.plutocracy.repository.TagRepository;
+import com.aaryav.plutocracy.repository.UserRepository;
+import com.aaryav.plutocracy.security.utility.JwtUtils;
+import com.aaryav.plutocracy.utils.ResponseUtils;
 
 import lombok.AllArgsConstructor;
 

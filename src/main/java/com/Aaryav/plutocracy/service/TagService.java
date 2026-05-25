@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.service;
+package com.aaryav.plutocracy.service;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -6,12 +6,12 @@ import java.util.stream.Collectors;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.Aaryav.plutocracy.constant.ContextType;
-import com.Aaryav.plutocracy.dto.response.TagRetreivalRequestDto;
-import com.Aaryav.plutocracy.entity.Tag;
-import com.Aaryav.plutocracy.repository.NoteTagMappingRepository;
-import com.Aaryav.plutocracy.repository.TagRepository;
-import com.Aaryav.plutocracy.repository.TicketTagMappingRepository;
+import com.aaryav.plutocracy.constant.ContextType;
+import com.aaryav.plutocracy.dto.response.TagRetreivalRequestDto;
+import com.aaryav.plutocracy.entity.Tag;
+import com.aaryav.plutocracy.repository.NoteTagMappingRepository;
+import com.aaryav.plutocracy.repository.TagRepository;
+import com.aaryav.plutocracy.repository.TicketTagMappingRepository;
 
 import lombok.AllArgsConstructor;
 

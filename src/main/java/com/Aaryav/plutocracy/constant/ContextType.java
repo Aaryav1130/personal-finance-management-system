@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.constant;
+package com.aaryav.plutocracy.constant;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy;
+package com.aaryav.plutocracy;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

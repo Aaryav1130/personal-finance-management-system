@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.repository;
+package com.aaryav.plutocracy.repository;
 
 import java.util.Optional;
 import java.util.UUID;
@@ -6,7 +6,7 @@ import java.util.UUID;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import com.Aaryav.plutocracy.entity.TotalBalance;
+import com.aaryav.plutocracy.entity.TotalBalance;
 
 @Repository
 public interface TotalBalanceRepository extends JpaRepository<TotalBalance, UUID> {

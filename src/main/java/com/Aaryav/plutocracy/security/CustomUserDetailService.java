@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.security;
+package com.aaryav.plutocracy.security;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -9,8 +9,8 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.CrossOrigin;
 
-import com.Aaryav.plutocracy.repository.UserRepository;
-import com.Aaryav.plutocracy.security.utility.SecurityUtils;
+import com.aaryav.plutocracy.repository.UserRepository;
+import com.aaryav.plutocracy.security.utility.SecurityUtils;
 
 import lombok.AllArgsConstructor;
 

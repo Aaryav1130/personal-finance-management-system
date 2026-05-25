@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.controller;
+package com.aaryav.plutocracy.controller;
 
 import java.util.stream.Collectors;
 
@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Aaryav.plutocracy.service.TagService;
-import com.Aaryav.plutocracy.utils.ResponseUtils;
+import com.aaryav.plutocracy.service.TagService;
+import com.aaryav.plutocracy.utils.ResponseUtils;
 
 import io.swagger.v3.oas.annotations.Operation;
 import lombok.AllArgsConstructor;

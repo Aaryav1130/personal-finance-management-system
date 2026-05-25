@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.security.utility;
+package com.aaryav.plutocracy.security.utility;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import lombok.experimental.UtilityClass;
 @UtilityClass
 public class SecurityUtils {
 
-	public User convert(com.Aaryav.plutocracy.entity.User user) {
+	public User convert(com.aaryav.plutocracy.entity.User user) {
 		return new User(user.getEmailId(), user.getPassword(), List.of());
 	}
 

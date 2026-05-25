@@ -1,18 +1,18 @@
-package com.Aaryav.plutocracy.service;
+package com.aaryav.plutocracy.service;
 
 import java.util.stream.Collectors;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.Aaryav.plutocracy.dto.request.BalanceModeCreationRequestDto;
-import com.Aaryav.plutocracy.dto.request.BalanceModeUpdationRequestDto;
-import com.Aaryav.plutocracy.dto.response.BalanceModeDto;
-import com.Aaryav.plutocracy.entity.BalanceMode;
-import com.Aaryav.plutocracy.repository.BalanceModeRepository;
-import com.Aaryav.plutocracy.repository.TotalBalanceRepository;
-import com.Aaryav.plutocracy.security.utility.JwtUtils;
-import com.Aaryav.plutocracy.utils.ResponseUtils;
+import com.aaryav.plutocracy.dto.request.BalanceModeCreationRequestDto;
+import com.aaryav.plutocracy.dto.request.BalanceModeUpdationRequestDto;
+import com.aaryav.plutocracy.dto.response.BalanceModeDto;
+import com.aaryav.plutocracy.entity.BalanceMode;
+import com.aaryav.plutocracy.repository.BalanceModeRepository;
+import com.aaryav.plutocracy.repository.TotalBalanceRepository;
+import com.aaryav.plutocracy.security.utility.JwtUtils;
+import com.aaryav.plutocracy.utils.ResponseUtils;
 
 import lombok.AllArgsConstructor;
 

@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.dto.request;
+package com.aaryav.plutocracy.dto.request;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.Max;

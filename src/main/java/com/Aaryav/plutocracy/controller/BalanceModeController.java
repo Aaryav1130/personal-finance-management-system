@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.controller;
+package com.aaryav.plutocracy.controller;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -12,9 +12,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.Aaryav.plutocracy.dto.request.BalanceModeCreationRequestDto;
-import com.Aaryav.plutocracy.dto.request.BalanceModeUpdationRequestDto;
-import com.Aaryav.plutocracy.service.BalanceModeService;
+import com.aaryav.plutocracy.dto.request.BalanceModeCreationRequestDto;
+import com.aaryav.plutocracy.dto.request.BalanceModeUpdationRequestDto;
+import com.aaryav.plutocracy.service.BalanceModeService;
 
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

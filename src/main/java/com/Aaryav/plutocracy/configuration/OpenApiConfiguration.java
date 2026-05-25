@@ -1,10 +1,10 @@
-package com.Aaryav.plutocracy.configuration;
+package com.aaryav.plutocracy.configuration;
 
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.Aaryav.plutocracy.configuration.properties.OpenApiConfigurationProperties;
+import com.aaryav.plutocracy.configuration.properties.OpenApiConfigurationProperties;
 
 import io.swagger.v3.oas.models.Components;
 import io.swagger.v3.oas.models.OpenAPI;

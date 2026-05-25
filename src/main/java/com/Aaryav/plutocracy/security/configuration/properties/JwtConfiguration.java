@@ -1,10 +1,10 @@
-package com.Aaryav.plutocracy.security.configuration.properties;
+package com.aaryav.plutocracy.security.configuration.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 import lombok.Data;
 
-@ConfigurationProperties(prefix = "com.Aaryav.plutocracy")
+@ConfigurationProperties(prefix = "com.aaryav.plutocracy")
 @Data
 public class JwtConfiguration {
 

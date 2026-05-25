@@ -1,12 +1,12 @@
-package com.Aaryav.plutocracy.service;
+package com.aaryav.plutocracy.service;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.Aaryav.plutocracy.dto.request.MonthlySpendingThresholdLimitRequestDto;
-import com.Aaryav.plutocracy.repository.CurrentMonthlySpendingThresholdLimitRepository;
-import com.Aaryav.plutocracy.security.utility.JwtUtils;
-import com.Aaryav.plutocracy.utils.ResponseUtils;
+import com.aaryav.plutocracy.dto.request.MonthlySpendingThresholdLimitRequestDto;
+import com.aaryav.plutocracy.repository.CurrentMonthlySpendingThresholdLimitRepository;
+import com.aaryav.plutocracy.security.utility.JwtUtils;
+import com.aaryav.plutocracy.utils.ResponseUtils;
 
 import lombok.AllArgsConstructor;
 

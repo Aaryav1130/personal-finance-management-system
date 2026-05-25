@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.utils;
+package com.aaryav.plutocracy.utils;
 
 import java.time.LocalDateTime;
 import java.util.Arrays;
@@ -9,9 +9,9 @@ import org.json.JSONObject;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 
-import com.Aaryav.plutocracy.constant.BalanceModeType;
-import com.Aaryav.plutocracy.constant.ContextType;
-import com.Aaryav.plutocracy.constant.TicketType;
+import com.aaryav.plutocracy.constant.BalanceModeType;
+import com.aaryav.plutocracy.constant.ContextType;
+import com.aaryav.plutocracy.constant.TicketType;
 
 @Component
 public class ResponseUtils {

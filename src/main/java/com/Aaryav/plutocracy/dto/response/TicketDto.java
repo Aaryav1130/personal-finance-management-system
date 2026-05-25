@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.dto.response;
+package com.aaryav.plutocracy.dto.response;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;

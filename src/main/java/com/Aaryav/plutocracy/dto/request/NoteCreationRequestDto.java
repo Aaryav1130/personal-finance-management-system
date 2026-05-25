@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.dto.request;
+package com.aaryav.plutocracy.dto.request;
 
 import java.util.List;
 

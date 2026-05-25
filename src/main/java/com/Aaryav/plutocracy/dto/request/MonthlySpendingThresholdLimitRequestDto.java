@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.dto.request;
+package com.aaryav.plutocracy.dto.request;
 
 import com.fasterxml.jackson.databind.annotation.JacksonStdImpl;
 

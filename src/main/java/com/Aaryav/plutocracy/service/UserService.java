@@ -1,22 +1,22 @@
-package com.Aaryav.plutocracy.service;
+package com.aaryav.plutocracy.service;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.Aaryav.plutocracy.dto.request.UserCreationRequestDto;
-import com.Aaryav.plutocracy.dto.request.UserDetailUpdationRequestDto;
-import com.Aaryav.plutocracy.dto.request.UserLoginRequestDto;
-import com.Aaryav.plutocracy.dto.request.UserPasswordUpdationRequestDto;
-import com.Aaryav.plutocracy.dto.response.UserDetailsDto;
-import com.Aaryav.plutocracy.entity.CurrentMonthlySpendingThresholdLimit;
-import com.Aaryav.plutocracy.entity.TotalBalance;
-import com.Aaryav.plutocracy.entity.User;
-import com.Aaryav.plutocracy.repository.CurrentMonthlySpendingThresholdLimitRepository;
-import com.Aaryav.plutocracy.repository.TotalBalanceRepository;
-import com.Aaryav.plutocracy.repository.UserRepository;
-import com.Aaryav.plutocracy.security.utility.JwtUtils;
-import com.Aaryav.plutocracy.utils.ResponseUtils;
+import com.aaryav.plutocracy.dto.request.UserCreationRequestDto;
+import com.aaryav.plutocracy.dto.request.UserDetailUpdationRequestDto;
+import com.aaryav.plutocracy.dto.request.UserLoginRequestDto;
+import com.aaryav.plutocracy.dto.request.UserPasswordUpdationRequestDto;
+import com.aaryav.plutocracy.dto.response.UserDetailsDto;
+import com.aaryav.plutocracy.entity.CurrentMonthlySpendingThresholdLimit;
+import com.aaryav.plutocracy.entity.TotalBalance;
+import com.aaryav.plutocracy.entity.User;
+import com.aaryav.plutocracy.repository.CurrentMonthlySpendingThresholdLimitRepository;
+import com.aaryav.plutocracy.repository.TotalBalanceRepository;
+import com.aaryav.plutocracy.repository.UserRepository;
+import com.aaryav.plutocracy.security.utility.JwtUtils;
+import com.aaryav.plutocracy.utils.ResponseUtils;
 
 import lombok.AllArgsConstructor;
 

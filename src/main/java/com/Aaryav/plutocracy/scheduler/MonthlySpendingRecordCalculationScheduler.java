@@ -1,9 +1,9 @@
-package com.Aaryav.plutocracy.scheduler;
+package com.aaryav.plutocracy.scheduler;
 
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-import com.Aaryav.plutocracy.service.SpendingThresholdRecordService;
+import com.aaryav.plutocracy.service.SpendingThresholdRecordService;
 
 import lombok.AllArgsConstructor;
 

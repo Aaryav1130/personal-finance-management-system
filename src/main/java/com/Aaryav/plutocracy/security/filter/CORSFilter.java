@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.security.filter;
+package com.aaryav.plutocracy.security.filter;
 
 import java.io.IOException;
 

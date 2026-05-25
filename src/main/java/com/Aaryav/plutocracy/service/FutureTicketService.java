@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.service;
+package com.aaryav.plutocracy.service;
 
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -6,18 +6,18 @@ import java.util.stream.Collectors;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.Aaryav.plutocracy.dto.request.FutureTicketCreationRequestDto;
-import com.Aaryav.plutocracy.dto.response.BalanceModeDto;
-import com.Aaryav.plutocracy.dto.response.TicketDto;
-import com.Aaryav.plutocracy.entity.FutureTicket;
-import com.Aaryav.plutocracy.entity.Tag;
-import com.Aaryav.plutocracy.entity.TicketTagMapping;
-import com.Aaryav.plutocracy.repository.FutureTicketRepository;
-import com.Aaryav.plutocracy.repository.TagRepository;
-import com.Aaryav.plutocracy.repository.TicketTagMappingRepository;
-import com.Aaryav.plutocracy.repository.UserRepository;
-import com.Aaryav.plutocracy.security.utility.JwtUtils;
-import com.Aaryav.plutocracy.utils.ResponseUtils;
+import com.aaryav.plutocracy.dto.request.FutureTicketCreationRequestDto;
+import com.aaryav.plutocracy.dto.response.BalanceModeDto;
+import com.aaryav.plutocracy.dto.response.TicketDto;
+import com.aaryav.plutocracy.entity.FutureTicket;
+import com.aaryav.plutocracy.entity.Tag;
+import com.aaryav.plutocracy.entity.TicketTagMapping;
+import com.aaryav.plutocracy.repository.FutureTicketRepository;
+import com.aaryav.plutocracy.repository.TagRepository;
+import com.aaryav.plutocracy.repository.TicketTagMappingRepository;
+import com.aaryav.plutocracy.repository.UserRepository;
+import com.aaryav.plutocracy.security.utility.JwtUtils;
+import com.aaryav.plutocracy.utils.ResponseUtils;
 
 import lombok.AllArgsConstructor;
 

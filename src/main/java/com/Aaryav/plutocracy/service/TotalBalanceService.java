@@ -1,8 +1,8 @@
-package com.Aaryav.plutocracy.service;
+package com.aaryav.plutocracy.service;
 
 import org.springframework.stereotype.Service;
 
-import com.Aaryav.plutocracy.repository.TotalBalanceRepository;
+import com.aaryav.plutocracy.repository.TotalBalanceRepository;
 
 import lombok.AllArgsConstructor;
 

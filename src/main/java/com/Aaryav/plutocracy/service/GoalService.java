@@ -1,18 +1,18 @@
-package com.Aaryav.plutocracy.service;
+package com.aaryav.plutocracy.service;
 
 import java.util.stream.Collectors;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import com.Aaryav.plutocracy.dto.request.GoalCreationRequestDto;
-import com.Aaryav.plutocracy.dto.request.GoalUpdationRequestDto;
-import com.Aaryav.plutocracy.dto.response.GoalDto;
-import com.Aaryav.plutocracy.entity.Goal;
-import com.Aaryav.plutocracy.repository.GoalRepository;
-import com.Aaryav.plutocracy.repository.UserRepository;
-import com.Aaryav.plutocracy.security.utility.JwtUtils;
-import com.Aaryav.plutocracy.utils.ResponseUtils;
+import com.aaryav.plutocracy.dto.request.GoalCreationRequestDto;
+import com.aaryav.plutocracy.dto.request.GoalUpdationRequestDto;
+import com.aaryav.plutocracy.dto.response.GoalDto;
+import com.aaryav.plutocracy.entity.Goal;
+import com.aaryav.plutocracy.repository.GoalRepository;
+import com.aaryav.plutocracy.repository.UserRepository;
+import com.aaryav.plutocracy.security.utility.JwtUtils;
+import com.aaryav.plutocracy.utils.ResponseUtils;
 
 import lombok.AllArgsConstructor;
 

@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.security.configuration;
+package com.aaryav.plutocracy.security.configuration;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-import com.Aaryav.plutocracy.constant.ApiPathExclusion;
-import com.Aaryav.plutocracy.security.CustomUserDetailService;
-import com.Aaryav.plutocracy.security.filter.JwtAuthenticationFilter;
+import com.aaryav.plutocracy.constant.ApiPathExclusion;
+import com.aaryav.plutocracy.security.CustomUserDetailService;
+import com.aaryav.plutocracy.security.filter.JwtAuthenticationFilter;
 
 import lombok.AllArgsConstructor;
 

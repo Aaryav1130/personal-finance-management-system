@@ -9,7 +9,7 @@
 		<version>2.5.0</version>
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.Aaryav</groupId>
+	<groupId>com.aaryav</groupId>
 	<artifactId>personal-finance-management-system</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>personal-finance-management-system</name>

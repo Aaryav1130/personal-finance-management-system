@@ -1,4 +1,4 @@
-package com.Aaryav.plutocracy.entity;
+package com.aaryav.plutocracy.entity;
 
 import java.io.Serializable;
 import java.util.UUID;
