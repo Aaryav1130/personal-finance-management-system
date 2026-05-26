@@ -1,6 +1,13 @@
-FROM adoptopenjdk:15_36-jdk-hotspot
-RUN mkdir -p /var/log/personal-finance-management-system
-VOLUME /tmp
-EXPOSE 8080
-ADD target/personal-finance-management-system-0.0.1-SNAPSHOT.jar app.jar
-ENTRYPOINT ["java","-Djava.security.egd=file:/dev/./urandom","-jar","/app.jar"]
+FROM eclipse-temurin:17-jdk
+
+WORKDIR /app
+
+COPY . .
+
+RUN chmod +x mvnw
+
+RUN ./mvnw clean install -DskipTests
+
+EXPOSE 9090
+
+ENTRYPOINT ["java","-jar","target/personal-finance-management-system-0.0.1-SNAPSHOT.jar"]
