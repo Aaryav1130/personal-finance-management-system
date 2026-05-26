@@ -15,7 +15,7 @@
 	<name>personal-finance-management-system</name>
 	<description>Personal Finance Management System using Java Spring-boot and PostgreSQL</description>
 	<properties>
-		<java.version>15</java.version>
+		<java.version>17</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
