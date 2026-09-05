@@ -114,7 +114,7 @@ class GoalServiceTest {
         GoalResponse result = goalService.getGoalById(1L);
 
         assertThat(result.getCurrentProgress()).isEqualByComparingTo("2000");
-        assertThat(result.getProgressPercentage()).isEqualByComparingTo("40.00");
+        assertThat(result.getProgressPercentage()).isEqualTo(40.0);
         assertThat(result.getRemainingAmount()).isEqualByComparingTo("3000");
     }
 

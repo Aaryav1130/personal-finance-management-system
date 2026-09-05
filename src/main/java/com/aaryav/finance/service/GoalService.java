@@ -156,11 +156,11 @@ public class GoalService {
 
         BigDecimal currentProgress = totalIncome.subtract(totalExpense);
 
-        BigDecimal progressPercentage = goal.getTargetAmount().compareTo(BigDecimal.ZERO) > 0
+        double progressPercentage = goal.getTargetAmount().compareTo(BigDecimal.ZERO) > 0
                 ? currentProgress.multiply(BigDecimal.valueOf(100))
                     .divide(goal.getTargetAmount(), 2, RoundingMode.HALF_UP)
-                    .stripTrailingZeros()
-                : BigDecimal.ZERO;
+                    .doubleValue()
+                : 0.0;
 
         BigDecimal remainingAmount = goal.getTargetAmount().subtract(currentProgress)
                 .max(BigDecimal.ZERO);
