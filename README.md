@@ -1,103 +1,237 @@
-#### Personal Finance Management System
+# Personal Finance Manager API
 
-## Tech Stack Used 
-* Java
-* Spring Boot
-* Spring Security (JWT Based Authentication and Authorization)
-* Spring Data JPA/Hibernate
-* PostgreSQL
-* Open-API (Swagger-UI)
-* Lombok
-* Figma
+A comprehensive personal finance management system built with **Spring Boot 3.3.4** that enables users to track income, expenses, savings goals, and generate financial reports.
 
-## Entities
-##### SQL Migration Scripts can be viewed at src/main/resources/db/migration
-##### Read in detail about entities used in ENTITIES.md in project root.
-![ER Diagram of Database Entities](https://user-images.githubusercontent.com/69693621/119250906-e7159b80-bbc0-11eb-930d-944714b986f6.jpeg)
+## Tech Stack
 
+| Component | Technology |
+|---|---|
+| Language | Java 17 |
+| Framework | Spring Boot 3.3.4 |
+| Security | Spring Security (Session-based Authentication) |
+| Database | H2 (file-based, zero-config) |
+| ORM | Spring Data JPA / Hibernate |
+| Validation | Jakarta Bean Validation |
+| Testing | JUnit 5, Mockito |
+| Coverage | JaCoCo |
+| Build Tool | Maven |
+| Deployment | Render |
 
-## Security Flow
-* On Successful validation of login credentials, a JWT will be returned representing the user **(decode the below sample JWT on jwt.io for reference)**
+## Features
 
-```
-eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJoYXJkaWsuYmVobDc0NDRAZ21haWwuY29tIiwiYWNjb3VudF9jcmVhdGlvbl90aW1lc3RhbXAiOiIyMDIxLTA1LTIyVDExOjIyOjE5LjQ5MTQ4NiIsInVzZXJfaWQiOiIzODQ3ZjYxYy1hNjc0LTQ0N2UtYmQ0ZC0wZThhODk3NTg2YmQiLCJ0b3RhbF9iYWxhbmNlX2lkIjoiMWQyZWNiMzctMDNkNS00YjhhLWI0Y2MtMDllZTBmYjQwMDM3Iiwic2NvcGUiOiJ1c2VyIiwibmFtZSI6IkhhcmRpayBCZWhsIiwiZXhwIjoxNjIxNzA4NDE0LCJpYXQiOjE2MjE2NzI0MTR9.XaqcTVYUuBIBtp74pJK-_mTtQCYMWdduoWGoYhsSxD4
-```
-* The received JWT should be included in the headers when calling a protected API
-* Authentication Bearer format to be used **(Header key should be 'Authentication' and value should start with Bearer followed with a single blank space and recieved JWT)**
+- **User Authentication** — Register, login (session cookies), logout with complete data isolation
+- **Transaction Management** — Full CRUD with date validation, category-based typing, and filtering
+- **Category System** — 7 pre-seeded default categories + user-defined custom categories
+- **Savings Goals** — Target-based goals with dynamic progress tracking (Income - Expenses)
+- **Financial Reports** — Monthly and yearly analytics with category-wise breakdowns
 
-```
-Authentication : Bearer <JWT>
-```
+## Design Decisions
 
-## Main Features
-* User's are able to register themselves with the application **(register/login/update-details/change-password)**
-* User's are able to manage and track their balance across different **modes**
-* User's are able to track their **current** expenses/gains.
-* User's are able to track their **upcoming (future)** expenses/gains.
-* User's are able to set **financial goals** and track their completion.
-* User's are able to set a **monthy spending threshold** and can track it through the month. (calculated automatically at month end using Spring scheduler and cron expressions)
-* User's are able to create financial **notes** for their reference.
-* User's are able to assign **tags** to their expenses/gains tickets or notes for future reference and quering
+### Why Session-Based Auth over JWT?
+Session-based authentication with HTTP-only cookies provides better security for server-rendered or same-origin APIs — cookies are automatically managed by the browser/client, sessions can be revoked server-side instantly, and there's no need to manage token refresh logic.
 
+### Why H2 over PostgreSQL?
+H2 was chosen for zero-configuration deployment. The file-based mode persists data across restarts while requiring no external database setup — ideal for evaluation and Render free-tier hosting.
 
-## Setup
+### Why BigDecimal for Financial Amounts?
+`BigDecimal` avoids floating-point precision errors that `Double` introduces in financial calculations (e.g., `0.1 + 0.2 != 0.3` with doubles).
 
-* Install Java 15
-* Install Maven
-* Install PostgreSQL
-
-Recommended way is to use [sdkman](https://sdkman.io/) for installing both maven and java
-
-Create postgres user (superuser) with name and password as plutocracy
+## Architecture
 
 ```
-CREATE USER plutocracy WITH PASSWORD 'plutocracy' SUPERUSER;
-```
-Create Database with name 'plutocracy' and assign the above created user to the database with preferable CLI or GUI tool
-
-```
-create database plutocracy;
+Controller → Service → Repository → Database
+     ↑            ↑
+  DTOs      Exception Handler (@ControllerAdvice)
 ```
 
-```
-grant all privileges on database plutocracy to plutocracy;
-```
+**Layered Architecture** with strict separation of concerns:
+- **Controllers** — HTTP request/response handling, validation
+- **Services** — Business logic, authorization checks
+- **Repositories** — Data access with custom JPQL queries
+- **DTOs** — Separate request/response objects from entities
+- **Global Exception Handler** — Consistent error responses with proper HTTP status codes
 
-Run the below commands in the core
+## Setup & Run
 
-```
-mvn clean
-```
+### Prerequisites
+- Java 17+
+- Maven 3.8+
 
-```
-mvn install
-```
+### Local Development
 
-Execute any of the two commands below to run the application
+```bash
+# Clone the repository
+git clone https://github.com/Aaryav1130/personal-finance-management-system.git
+cd personal-finance-management-system
 
-```
-java -jar target/url-shortner-h2-db-0.0.1-SNAPSHOT.jar
-```
+# Run the application
+./mvnw spring-boot:run
 
-```
-mvn spring-boot:run
-```
-
-The Default port is 9090 and base-url is set to /plutocracy (both can be changed in application.properties)
-
-Go to the below URI to view Swagger-UI (API-docs)
-
-```
-http://localhost:9090/plutocracy/swagger-ui.html
+# Application starts at http://localhost:8080/api
 ```
 
----
+### Run Tests
 
+```bash
+# Run all tests with coverage report
+./mvnw test
 
-## Quick Guide To Use Swagger-UI
+# Coverage report generated at: target/site/jacoco/index.html
+```
 
-* Click on API that you wish to hit by clicking the **Try It Out** button
-* Fill in the input if required as mentioned and click on **execute**
-* Some API's do not require the user to authenticate themselves before using it like account-registeration/account-login API's
-* In order to gain JWT required for authentication, execute the login API with valid credentials and paste the received JWT in repsonse in the Top Right section y clicking on **Authorize** and paste the JWT there to authorize
-* After successfully authorization, all protected API's can be executed the same way non-protected API's were being executed, the JWT will be **automatically** sent to the server inside headers following **bearerAuth** security flow. 
+### Docker
+
+```bash
+docker build -t finance-manager .
+docker run -p 8080:8080 finance-manager
+```
+
+## API Documentation
+
+Base URL: `/api`
+
+### 1. Authentication
+
+| Method | Endpoint | Description | Status |
+|--------|----------|-------------|--------|
+| POST | `/api/auth/register` | Register a new user | 201 |
+| POST | `/api/auth/login` | Login (returns session cookie) | 200 |
+| POST | `/api/auth/logout` | Logout (invalidates session) | 200 |
+
+**Register:**
+```json
+POST /api/auth/register
+{
+  "username": "user@example.com",
+  "password": "password123",
+  "fullName": "John Doe",
+  "phoneNumber": "+1234567890"
+}
+// Response: { "message": "User registered successfully", "userId": 1 }
+```
+
+**Login:**
+```json
+POST /api/auth/login
+{ "username": "user@example.com", "password": "password123" }
+// Response: { "message": "Login successful" }
+// Sets session cookie for subsequent requests
+```
+
+### 2. Transactions
+
+| Method | Endpoint | Description | Status |
+|--------|----------|-------------|--------|
+| POST | `/api/transactions` | Create a transaction | 201 |
+| GET | `/api/transactions` | List transactions (with filters) | 200 |
+| PUT | `/api/transactions/{id}` | Update a transaction | 200 |
+| DELETE | `/api/transactions/{id}` | Delete a transaction | 200 |
+
+**Query Parameters for GET:** `startDate`, `endDate`, `categoryId` (all optional)
+
+```json
+POST /api/transactions
+{
+  "amount": 50000.00,
+  "date": "2024-01-15",
+  "category": "Salary",
+  "description": "January Salary"
+}
+// Response: { "id": 1, "amount": 50000.00, "date": "2024-01-15",
+//             "category": "Salary", "description": "January Salary", "type": "INCOME" }
+```
+
+### 3. Categories
+
+| Method | Endpoint | Description | Status |
+|--------|----------|-------------|--------|
+| GET | `/api/categories` | List all categories | 200 |
+| POST | `/api/categories` | Create custom category | 201 |
+| DELETE | `/api/categories/{name}` | Delete custom category | 200 |
+
+**Default Categories:** Salary (INCOME), Food, Rent, Transportation, Entertainment, Healthcare, Utilities (EXPENSE)
+
+### 4. Savings Goals
+
+| Method | Endpoint | Description | Status |
+|--------|----------|-------------|--------|
+| POST | `/api/goals` | Create a savings goal | 201 |
+| GET | `/api/goals` | List all goals with progress | 200 |
+| GET | `/api/goals/{id}` | Get specific goal | 200 |
+| PUT | `/api/goals/{id}` | Update goal | 200 |
+| DELETE | `/api/goals/{id}` | Delete goal | 200 |
+
+**Progress Calculation:** `currentProgress = Total Income - Total Expenses` since `startDate`
+
+### 5. Reports
+
+| Method | Endpoint | Description | Status |
+|--------|----------|-------------|--------|
+| GET | `/api/reports/monthly/{year}/{month}` | Monthly financial report | 200 |
+| GET | `/api/reports/yearly/{year}` | Yearly financial report | 200 |
+
+```json
+GET /api/reports/monthly/2024/1
+{
+  "month": 1, "year": 2024,
+  "totalIncome": { "Salary": 50000.00 },
+  "totalExpenses": { "Food": 5000.00, "Rent": 15000.00 },
+  "netSavings": 30000.00
+}
+```
+
+## Error Handling
+
+| Status | Description |
+|--------|-------------|
+| 400 | Bad Request — validation errors, malformed input |
+| 401 | Unauthorized — invalid credentials, expired session |
+| 403 | Forbidden — accessing another user's data |
+| 404 | Not Found — resource doesn't exist |
+| 409 | Conflict — duplicate category names |
+
+## Project Structure
+
+```
+src/main/java/com/aaryav/finance/
+├── FinanceManagerApplication.java
+├── config/
+│   ├── SecurityConfig.java          # Session-based security
+│   ├── CustomUserDetailsService.java
+│   └── DataInitializer.java         # Seeds default categories
+├── controller/
+│   ├── AuthController.java
+│   ├── TransactionController.java
+│   ├── CategoryController.java
+│   ├── GoalController.java
+│   └── ReportController.java
+├── service/
+│   ├── AuthService.java
+│   ├── TransactionService.java
+│   ├── CategoryService.java
+│   ├── GoalService.java
+│   └── ReportService.java
+├── repository/
+│   ├── UserRepository.java
+│   ├── TransactionRepository.java
+│   ├── CategoryRepository.java
+│   └── GoalRepository.java
+├── entity/
+│   ├── User.java
+│   ├── Transaction.java
+│   ├── Category.java
+│   ├── CategoryType.java
+│   └── Goal.java
+├── dto/
+│   ├── request/
+│   └── response/
+└── exception/
+    ├── GlobalExceptionHandler.java
+    └── ...custom exceptions
+```
+
+## Author
+
+**Aaryav Chaudhary**
+- GitHub: [@Aaryav1130](https://github.com/Aaryav1130)
+- Email: aaryav1130@gmail.com

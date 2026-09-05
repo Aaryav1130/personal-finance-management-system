@@ -1,21 +1,8 @@
-version: '3'
+version: '3.8'
 services:
-  database:
-    image: postgres
-    ports:
-    - 6432:5432
-    environment:
-      POSTGRES_DB: plutocracy
-      POSTGRES_USER: plutocracy
-      POSTGRES_PASSWORD: plutocracy
-  service:
+  app:
     build: .
     ports:
-    - 9090:8080
+      - "8080:8080"
     environment:
-      SPRING_DATASOURCE_URL: jdbc:postgresql://database/plutocracy
-      SPRING_DATASOURCE_USERNAME: plutocracy
-      SPRING_DATASOURCE_PASSWORD: plutocracy
-      SERVER_SERVLET_CONTEXT_PATH: /plutocracy
-    depends_on:
-    - database
+      - PORT=8080
