@@ -63,10 +63,20 @@ public class TransactionService {
      * Retrieves transactions with optional filters.
      */
     public Map<String, List<TransactionResponse>> getTransactions(
-            LocalDate startDate, LocalDate endDate, Long categoryId) {
+            LocalDate startDate, LocalDate endDate, Long categoryId, String categoryName) {
         User user = getCurrentUser();
+
+        // Resolve category name to ID if provided
+        Long resolvedCategoryId = categoryId;
+        if (categoryName != null && !categoryName.isBlank() && resolvedCategoryId == null) {
+            resolvedCategoryId = categoryRepository
+                    .findByNameAccessibleByUser(categoryName, user.getId())
+                    .map(c -> c.getId())
+                    .orElse(null);
+        }
+
         List<TransactionResponse> transactions = transactionRepository
-                .findByFilters(user.getId(), startDate, endDate, categoryId)
+                .findByFilters(user.getId(), startDate, endDate, resolvedCategoryId)
                 .stream()
                 .map(this::mapToResponse)
                 .collect(Collectors.toList());

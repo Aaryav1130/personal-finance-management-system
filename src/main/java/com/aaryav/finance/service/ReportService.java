@@ -31,6 +31,9 @@ public class ReportService {
      * Generates a monthly report with income/expense breakdown by category.
      */
     public MonthlyReportResponse getMonthlyReport(int year, int month) {
+        if (month < 1 || month > 12) {
+            throw new com.aaryav.finance.exception.BadRequestException("Month must be between 1 and 12");
+        }
         User user = getCurrentUser();
         List<Transaction> transactions = transactionRepository
                 .findByUserIdAndYearAndMonth(user.getId(), year, month);

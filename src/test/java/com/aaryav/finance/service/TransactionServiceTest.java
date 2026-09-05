@@ -111,7 +111,7 @@ class TransactionServiceTest {
                 .thenReturn(List.of(t));
 
         Map<String, List<TransactionResponse>> result = transactionService.getTransactions(
-                LocalDate.of(2024, 1, 1), LocalDate.of(2024, 1, 31), null);
+                LocalDate.of(2024, 1, 1), LocalDate.of(2024, 1, 31), null, null);
 
         assertThat(result.get("transactions")).hasSize(1);
     }
@@ -121,7 +121,7 @@ class TransactionServiceTest {
     void getTransactions_NoFilters() {
         when(transactionRepository.findByFilters(1L, null, null, null)).thenReturn(List.of());
 
-        Map<String, List<TransactionResponse>> result = transactionService.getTransactions(null, null, null);
+        Map<String, List<TransactionResponse>> result = transactionService.getTransactions(null, null, null, null);
 
         assertThat(result.get("transactions")).isEmpty();
     }

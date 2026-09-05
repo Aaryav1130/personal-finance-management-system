@@ -159,6 +159,7 @@ public class GoalService {
         BigDecimal progressPercentage = goal.getTargetAmount().compareTo(BigDecimal.ZERO) > 0
                 ? currentProgress.multiply(BigDecimal.valueOf(100))
                     .divide(goal.getTargetAmount(), 2, RoundingMode.HALF_UP)
+                    .stripTrailingZeros()
                 : BigDecimal.ZERO;
 
         BigDecimal remainingAmount = goal.getTargetAmount().subtract(currentProgress)

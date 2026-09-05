@@ -33,8 +33,9 @@ public class TransactionController {
     public ResponseEntity<?> getTransactions(
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
             @RequestParam(required = false) @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate,
-            @RequestParam(required = false) Long categoryId) {
-        return ResponseEntity.ok(transactionService.getTransactions(startDate, endDate, categoryId));
+            @RequestParam(required = false) Long categoryId,
+            @RequestParam(required = false) String category) {
+        return ResponseEntity.ok(transactionService.getTransactions(startDate, endDate, categoryId, category));
     }
 
     /** PUT /api/transactions/{id} - Update a transaction (date is immutable). */
